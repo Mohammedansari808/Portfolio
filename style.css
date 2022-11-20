@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.navibar {
+    text-decoration: none;
+
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    background-color: rgb(210, 222, 228);
+    width: 100vw;
+
+    top: 0;
+    animation: navihide 2s;
+}
+
+.menubar {
+    text-decoration: none;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-basis: auto;
+    list-style-type: none;
+
+    width: 100vw;
+
+    top: 0;
+    animation: navihide 2s;
+}
+
+@media only screen and (max-width: 600px) {
+    .navibar {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .menubar {
+        display: none;
+    }
+}
+
+
+.container {
+    margin-top: 30px;
+}
+
+@keyframes navihide {
+    0% {
+        left: -350px;
+    }
+
+    100% {
+        left: 0px
+    }
+}
+
+.home-list {
+    margin: 20px;
+    text-align: center;
+}
+
+a {
+    color: black;
+    font-family: 'Merriweather Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+.first-name {
+    font-family: 'Vidaloka', serif;
+    font-size: 30px;
+
+}
+
+
+.resizer {
+    position: relative;
+}
+
+.portfolio-image {
+
+
+    height: 600px;
+    width: 600px;
+    object-fit: cover;
+    object-position: right -70%;
+    border-radius: 50%;
+    rotate: -5deg;
+    animation: fadeIn 5s;
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.hi-text {
+
+
+    font-family: 'Vidaloka', serif;
+    font-size: 50px;
+    width: 500px;
+    animation: textSlide 2s;
+    position: relative;
+    top: 100px;
+}
+
+@keyframes textSlide {
+    0% {
+        top: 50px;
+        opacity: 0
+    }
+
+    100% {
+        top: 100px;
+        opacity: 1;
+    }
+}
+
+.page-start {
+    margin: 100px 0px;
+
+
+}
+
+.full-stack {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: large;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+
+
+
+
+.a-link {
+    font-family: 'Merriweather Sans', sans-serif;
+    border: 2px solid black;
+    padding: 20px 30px;
+    border-radius: 10px;
+
+}
+
+.res-down {
+    position: relative;
+    top: 50px;
+    animation: textSlide 2s;
+}
+
+.a-link:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    box-shadow: 2px 2px 20px black;
+
+}
+
+a {
+    transition-duration: 0.5s;
+}
+
+.small-box {
+
+    background-color: rgb(53, 51, 51);
+    width: 200px;
+    padding: 20px;
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.skill-name {
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.topic-heading {
+    width: 100%vw;
+    margin: 30px;
+    font-weight: bolder;
+}
+
+.t-heading {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.skill-row {
+    margin-top: 85px;
+    margin: 25px
+}
+
+.about-me-paragraph {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    word-spacing: 3px;
+    padding: 0px 25px;
+
+
+
+}
+
+hr {
+    margin: 45px 0px
+}
+
+.rows {
+    text-align: center;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 20px;
+    background-color: rgb(201, 199, 199);
+}
+
+.field {
+    padding: 7px;
+    margin: 15px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.field-width {
+    margin-top: 20px
+}
+
+.submit-btn {
+    margin-bottom: 20px;
+    background-color: transparent;
+
+}
