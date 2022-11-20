@@ -110,17 +110,17 @@ a {
     width: 500px;
     animation: textSlide 2s;
     position: relative;
-    top: 100px;
+    top: 70px;
 }
 
 @keyframes textSlide {
     0% {
-        top: 50px;
+        top: 40px;
         opacity: 0
     }
 
     100% {
-        top: 100px;
+        top: 70px;
         opacity: 1;
     }
 }
@@ -153,18 +153,18 @@ a {
 
 .res-down {
     position: relative;
-    top: 50px;
+    top: 25px;
     animation: downslide 2s;
 }
 
 @keyframes downslide {
     0% {
-        top: 20px;
+        top: 10px;
         opacity: 0
     }
 
     100% {
-        top: 50px;
+        top: 25px;
         opacity: 1;
     }
 }
