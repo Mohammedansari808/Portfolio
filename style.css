@@ -93,25 +93,25 @@ a {
 .portfolio-image {
 
 
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
     object-fit: cover;
     object-position: right -70%;
     border-radius: 50%;
+    padding-top: 20px;
+    margin-top: 50px;
     rotate: -5deg;
     animation: fadeIn 5s;
+    box-shadow: 1px 1px 20px black;
+    border-radius: 100%;
+
+
 
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 1;
-    }
-}
+
+
 
 
 .hi-text {
