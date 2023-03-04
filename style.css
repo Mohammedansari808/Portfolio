@@ -250,10 +250,10 @@ hr {
 
 .rows {
     text-align: center;
-    box-shadow: 2px 2px 20px black;
-    border-radius: 20px;
-    background-color: rgb(201, 199, 199);
+
 }
+
+
 
 .field {
     padding: 7px;
@@ -271,5 +271,15 @@ hr {
 .submit-btn {
     margin-bottom: 20px;
     background-color: transparent;
+
+}
+
+.img-hov {
+    transition: ease-in-out 0.3s;
+}
+
+.img-hov:hover {
+    height: 305px;
+
 
 }
