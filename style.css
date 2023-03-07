@@ -118,20 +118,18 @@ a {
 
 .portfolio-image {
 
-
     height: 500px;
     width: 500px;
     object-fit: cover;
     object-position: right -70%;
     border-radius: 50%;
+    border-top: 20px;
     padding-top: 20px;
     margin-top: 50px;
     rotate: -5deg;
     animation: fadeIn 5s;
     box-shadow: 1px 1px 20px black;
     border-radius: 100%;
-
-
 
 }
 
