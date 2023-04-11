@@ -140,6 +140,7 @@ details {
 
 }
 
+
 details:hover {
     box-shadow: 1px 1px 10px black;
     transition: ease-in-out 0.2s;
