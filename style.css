@@ -5,7 +5,14 @@
 html {
     scroll-behavior: smooth;
 }
-
+body{
+    background-color: #0f1012;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
+}
+section{
+    scroll-snap-align: start;
+}
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -28,21 +35,20 @@ html {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
-    background-color: rgb(210, 222, 228);
+    background-color: #0f1012;
     width: 100vw;
-
+transition: top 1s ease;
     top: 0;
     animation: navihide 2s;
 }
 
 .project-box {
     transition: 0.2s ease-in-out;
+    border-radius: 20px;
+    background-color: #1a1c1d;
 }
 
-.project-box:hover {
-    box-shadow: 1px 1px 15px black;
 
-}
 
 
 .menubar {
@@ -60,9 +66,21 @@ html {
     animation: navihide 2s;
 }
 
+.nv-item{
+    color : #fff    ;
+    font-size: 11px;
+}
+
 .nv-item:hover {
+    color: #01f6ca;
     text-decoration: none;
 
+}
+@media only screen and (max-width: 1024px) {
+    #home-section{
+        flex-direction: column-reverse;
+       align-items: center;
+    }
 }
 
 
@@ -86,7 +104,7 @@ html {
 
 @keyframes navihide {
     0% {
-        left: -350px;
+        top: -500px;
     }
 
     100% {
@@ -118,8 +136,8 @@ a {
 
 .portfolio-image {
 
-    height: 500px;
-    width: 500px;
+    /* height: 421px; */
+    width: 382px;
     object-fit: cover;
     object-position: right -70%;
     border-radius: 50%;
@@ -130,10 +148,22 @@ a {
     animation: fadeIn 5s;
     box-shadow: 1px 1px 20px black;
     border-radius: 100%;
+    background: #d0d8e3;
+    animation : showImage 2s linear
+}
+
+.portfolio-image:hover{
 
 }
 
-
+@keyframes showImage {
+    0%{
+opacity: 0;
+    }
+    100%{
+opacity: 1;
+    }
+}
 details {
     border-radius: 5px;
     padding: 10px;
@@ -153,25 +183,27 @@ details:hover {
     font-family: 'Vidaloka', serif;
     font-size: 50px;
     width: 500px;
-    animation: textSlide 2s;
+    animation: textSlide 3s linear;
     position: relative;
-    top: 70px;
+    overflow: hidden;
+    height: 191px;
+    transition: height 1s ease;
 }
 
 @keyframes textSlide {
     0% {
-        top: 40px;
+        
         opacity: 0
     }
 
     100% {
-        top: 70px;
+        top : auto;
         opacity: 1;
     }
 }
 
 .page-start {
-    margin: 100px 0px;
+    margin: 100px 0px 0px;
 
 
 }
@@ -200,6 +232,9 @@ details:hover {
     position: relative;
     top: 25px;
     animation: downslide 2s;
+    background: linear-gradient(162deg, #01f6ca 27.96%, #4a95e6 50.96%, #aad4fc 72.57%);
+    border : none;
+    outline : none
 }
 
 @keyframes downslide {
@@ -214,12 +249,12 @@ details:hover {
     }
 }
 
-.a-link:hover {
+.res-down:hover {
     text-decoration: none;
-    background-color: black;
+    background: linear-gradient(162deg, #01f6ca 27.96%, #4a95e6 50.96%, #aad4fc 72.57%);
     color: white;
-    box-shadow: 2px 2px 20px black;
-
+    box-shadow: 2px 2px 10px rgb(223, 223, 223);
+border: none;
 }
 
 a {
@@ -252,11 +287,12 @@ a {
 }
 
 .t-heading {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: DM Sans, sans-serif;
     font-weight: bold;
     font-size: 30px;
     text-align: center;
     letter-spacing: 3px;
+    color : #fff
 }
 
 .skill-row {
@@ -266,13 +302,13 @@ a {
 }
 
 .about-me-paragraph {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: DM Sans, sans-serif;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
     word-spacing: 3px;
     padding: 0px 25px;
-
+color : #fff
 
 
 }

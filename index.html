@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
     <title>Mohammed Ansari Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -18,287 +26,557 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <style>
+        .conti {
+            /* margin-top: 200px; */
+            position: relative;
+            z-index: 0;
+            /* background-color: blue; */
+            transition: all 1s;
+            width: 488px;
+        }
+
+        .wo {
+            display: block;
+            transition: all .3s;
+            animation: showin .5s linear;
+
+        }
+
+        .an {
+            opacity: 0;
+            transition: all 0.8s;
+            position: absolute;
+            top: 0;
+            transform: rotateY(0);
+
+
+
+
+        }
+
+        .proj-content {
+            font-family: DM Sans, sans-serif;
+            color: #d0d8e3;
+        }
+
+        @keyframes showin {
+            0% {
+                opacity: 0;
+            }
+
+            85% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes showout {
+            0% {
+                opacity: 1;
+            }
+
+            85% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .whole:hover {
+            .conti {
+                transform: rotateY(180deg);
+            }
+
+            .an {
+                animation: showin .3s linear;
+                transform: rotateY(180deg);
+                opacity: 1;
+            }
+
+            .wo {
+                animation: showout .3s linear;
+                opacity: 0;
+            }
+
+            /* .cursor{
+                opacity: 1;
+            } */
+        }
+
+        .cursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            /* border-radius: 50%; */
+            /* linear-gradient(180deg, #02f6ca, #0180f6 52.6%, #aad4fc)/ */
+            /* background: url(./bubble.png); */
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: opacity .35s ease-in-out , left .3s ease-out,top 1s ease-out;
+        }
+
+        .project-heading {
+            font-family: DM Sans, sans-serif;
+            color: #fff
+        }
+    </style>
 
 </head>
 
 <body>
+    <img style="position: fixed;" src="./bubble.png"  class="cursor">
 
-    <div class="container" id="home-section">
-
-        <div class="row">
-
-            <div class="col-lg-6">
-                <div class="homepage">
-                    <div class="resizer">
-                        <img class="portfolio-image" src="./portfolio-picture.jpg" alt="">
-                    </div>
-                </div>
+    <!-- <div class="whole">
+        <div class="conti" style="height: 400px;width: 400px;">
+            <div class="wo">
+                hello world
             </div>
-            <div class="col-lg-6">
-                <div class="page-start">
-                    <div class="hi-text">
-                        <div>Hey There!</div>
-                        <div>I'm Mohammed Ansari</div>
-                        <div class="full-stack">
-                            A FULL STACK DEVELOPER
-
-                        </div>
-                    </div>
-                </div>
-                <a class="a-link res-down" target="_blank" href="./Mohammed Ansari CV Resume.pdf">DOWNLOAD RESUME</a>
-
+            <div class="an">
+                hello ansari
             </div>
         </div>
-        <div id="about-section"></div>
-    </div>
+    </div> -->
+  
+<!-- <div class="chip">
+    <p class="chip-text-1"></p>
+    <p class="chip-text-2"></p>
+    <p class="chip-text-3"></p>
+
+</div> -->
+
+    <section style="margin : 50px;display: flex;justify-content: space-around;" id="home-section">
+
+
+
+
+        <div>
+            <div class="page-start">
+                <div class="hi-text">
+                    <div style="color : #fff;font-family: DM Sans, sans-serif;font-weight: 600;">Hey There!</div>
+                    <div style="background: linear-gradient(92deg, #01f6ca 27.96%, #4a95e6 50.96%, #aad4fc 72.57%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-family: DM Sans, sans-serif;
+                        font-weight: 600;">I'm Mohammed Ansari</div>
+                    <div id="demo" style="color : #FFF" class="full-stack">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <a class="a-link res-down" target="_blank" href="./Mohammed Ansari Resume.pdf">DOWNLOAD RESUME</a>
+
+        </div>
+        <div>
+            <div class="homepage">
+                <div class="resizer">
+                    <img class="portfolio-image" src="./portfolio-picture.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- <div id="about-section"></div> -->
+    </section>
     <hr>
 
-    <div>
+    <section id="about-section">
         <div class="topic-heading">
             <p class="t-heading">
                 ABOUT ME
             </p>
         </div>
-        <p class="about-me-paragraph">
-            I'm Mohammed Ansari from Chennai,Tamilnadu.I'm a full stack developer and my portfolio is a
-            representation of all that I've learned.
-            .I love designing websites and am looking for more opportunities to work in challenging projects.
-        </p>
-    </div>
+        <div style="display: flex;width : 100%;justify-content: center;">
+            <p class="about-me-paragraph" style="width : 75%">
+                I'm Mohammed Ansari from Chennai,Tamilnadu.I'm a Full Stack Developer with 1 year of experience in
+                designing and implementing web applications. With a focus on clean code and user-centric design, I enjoy
+                collaborating with teams to create
+                intuitive and efficient solutions. Committed to continuous improvement, I stay updated with the latest
+                industry trends and technologies to enhance my skills and contribute effectively to any development
+                project.
+            </p>
+        </div>
+
+    </section>
 
     <hr>
-    <div class="topic-heading" id="skill-section">
-        <p class="t-heading">
-            SKILLS
-        </p>
-    </div>
-    <div class="container">
-        <div class="skill-row" style="display:flex;flex-wrap: wrap;justify-content: center;">
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" heignt="100"
-                    width="100">
-                <p class="skill-name">React</p>
-            </div>
-
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" heignt="100"
-                    width="100">
-                <p class="skill-name">Redux Toolkit</p>
-            </div>
+    <section>
 
 
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" heignt="100"
-                    width="100">
-                <p class="skill-name">HTML5</p>
-            </div>
-
-
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" heignt="100"
-                    width="100">
-                <p class="skill-name">CSS</p>
-            </div>
-
-
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    heignt="100" width="100">
-                <p class="skill-name">javascript</p>
-            </div>
-
-
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" heignt="100"
-                    width="100">
-                <p class="skill-name">node js</p>
-            </div>
-
-
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"
-                    heignt="100" width="100">
-                <p class="skill-name">mongodb</p>
-            </div>
-
-
-            <div class="small-box">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" heignt="100"
-                    width="100">
-                <p class="skill-name">express</p>
-            </div>
-
-
-            <div class="small-box">
-                <img src="https://platform-user-uploads.s3.amazonaws.com/blog/category/logo/60/sql.png" heignt="100"
-                    width="100">
-                <p class="skill-name">SQL</p>
-            </div>
-
-
+        <div class="topic-heading" id="skill-section">
+            <p class="t-heading">
+                SKILLS
+            </p>
         </div>
-    </div>
+        <div class="container">
+            <div class="skill-row" style="display:flex;flex-wrap: wrap;justify-content: center;">
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" heignt="100"
+                        width="100">
+                    <p class="skill-name">React</p>
+                </div>
+                <div class="small-box">
+                    <img src="./angular.png" heignt="100" width="100">
+                    <p class="skill-name">Angular</p>
+                </div>
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" heignt="100"
+                        width="100">
+                    <p class="skill-name">Redux Toolkit</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" heignt="100"
+                        width="100">
+                    <p class="skill-name">HTML5</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" heignt="100"
+                        width="100">
+                    <p class="skill-name">CSS</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        heignt="100" width="100">
+                    <p class="skill-name">javascript</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        heignt="100" width="100">
+                    <p class="skill-name">node js</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"
+                        heignt="100" width="100">
+                    <p class="skill-name">mongodb</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                        heignt="100" width="100">
+                    <p class="skill-name">express</p>
+                </div>
+
+
+                <div class="small-box">
+                    <img src="https://platform-user-uploads.s3.amazonaws.com/blog/category/logo/60/sql.png" heignt="100"
+                        width="100">
+                    <p class="skill-name">SQL</p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
     <hr>
-
-    <div class="topic-heading" id="coding-section">
-        <p class="t-heading">
-            Competitive Programming Skills
-        </p>
-        <div style="display:flex;justify-content: center;flex-wrap: wrap;">
-            <div class="project-box"
-                style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;border-radius: 7px;">
-                <h3 style="padding:10px;text-align: center;">Winner in Codekata Challenge</h3>
-                <a style="text-align: center;" href="./Mohammed Ansari.png" target="_blank">
-                    <img class="img-hov" style="margin:15px;box-shadow: 1px 1px 15px black; border-radius: 7px;"
-                        src="./Mohammed Ansari.png" height="300" alt="Winner">
-
-                </a>
+    <section>
 
 
+        <div class="topic-heading" id="coding-section">
+            <p class="t-heading">
+                Competitive Programming Skills
+            </p>
+            <div style="display:flex;justify-content: center;flex-wrap: wrap;">
+                <div class="project-box"
+                    style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                    <h3 style="font-family: DM Sans,sans-serif;color : #fff;padding:10px;text-align: center;">Winner in Codekata Challenge</h3>
+                    <a style="text-align: center;" href="./Mohammed Ansari.png" target="_blank">
+                        <img class="img-hov" style="margin:15px;box-shadow: 1px 1px 15px black; border-radius: 7px;"
+                            src="./Mohammed Ansari.png" height="300" alt="Winner">
+
+                    </a>
+
+
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
+    </section>
     <hr>
-    <div class="topic-heading" id="project-section">
-        <p class="t-heading">
-            PROJECTS
-        </p>
-        <div style="font-weight: lighter;font-size: larger;display:flex;flex-direction:column;align-items: center;">
-            <div>CREDENTIALS for Admin</div>
+    <section>
 
-            <p style="margin:0">username : <b>admin</b>
-                password : <b>cred123</b></p>
-            <div>CREDENTIALS for User</div>
-            <p style="margin:0">username : <b>user1</b> password : <b>user123</b></p>
-        </div>
-    </div>
-    <div style="display:flex;justify-content: center;flex-wrap: wrap;">
-        <div class="project-box"
-            style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;border-radius: 7px;">
-            <h3 style="padding:10px">Food Token Generator for Restaurant</h3>
-            <a style="text-align: center;" href="https://food-token-generator.netlify.app/" target="_blank">
-                <img class="img-hov" style="margin:15px;box-shadow: 1px 1px 15px black; border-radius: 7px;"
-                    src="./food-token-generator.netlify.app_products.png" height="300" alt="my Projects">
 
-            </a>
-            <div style="display:flex;justify-content: space-around;padding:20px">
-                <a style="position : static;max-width: 200px;" class="a-link res-down" target="_blank"
-                    href="https://github.com/Mohammedansari808/food-token-generator-frontend">FRONTEND git</a>
+        <div class="topic-heading" id="project-section">
+            <p class="t-heading">
+                PROJECTS
+            </p>
+            <div style="font-weight: lighter;font-size: larger;font-family : DM Sans,sans-serif; color : #d0d8e3;
+            ;display:flex;flex-direction:column;align-items: center;">
+                <div>CREDENTIALS for Admin</div>
 
-                <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
-                    href="https://github.com/Mohammedansari808/food-token-generator-backend">BACKEND git</a>
-            </div>
-            <div style="text-align: center;">
-
-                <details class="details-tag">
-                    <summary style="font-weight: bold;">Description</summary>
-                    <p style="width:500px;overflow-wrap: break-word;">This is Food Token
-                        generator Web Application
-                        for
-                        restaurant Authentication and
-                        authorization is given to this site .CHARTS included. To use this site signup is mandatory.
-                        This project is a full stack project .This page is used to Create tokens in the restaurant.
-                        TOKEN + ORDER same will be created in the products page with the help of REDUX.</p>
-                </details>
-
+                <p style="margin:0">username : <b>admin</b>
+                    password : <b>cred123</b></p>
+                <div>CREDENTIALS for User</div>
+                <p style="margin:0">username : <b>user1</b> password : <b>user123</b></p>
             </div>
         </div>
-        <div class="project-box"
-            style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;border-radius: 7px;">
-            <h3 style="text-align: center ;padding:10px">CHITCHAT Private</h3>
-            <a style="text-align: center;" href="https://chit-chat-z234.netlify.app/" target="_blank">
-                <img class="img-hov"
-                    style="margin:15px;object-fit: cover;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
-                    src="./chit-chat-z234.netlify.app_msg.png" height="300" width="400" alt="my Projects">
-            </a>
-            <div style="display:flex;justify-content: space-around;padding:20px">
-                <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
-                    target="_blank" href="https://github.com/Mohammedansari808/chit-chat-frontend">FRONTEND
-                    git</a>
+        <div style="display:flex;justify-content: center;flex-wrap: wrap;column-gap: 47px;">
+            <div class="whole">
+                <div class="conti project-box">
 
-                <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
-                    href="https://github.com/Mohammedansari808/chit-chat-backend">BACKEND git</a>
+                    <div class="wo "
+                        style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                        <h3 class="project-heading" style="padding:10px">Food Token Generator</h3>
+                        <a style="text-align: center;" href="https://food-token-generator.netlify.app/" target="_blank">
+                            <img class="img-hov" style="margin:15px;box-shadow: 1px 1px 15px black; border-radius: 7px;"
+                                src="./food-token-generator.netlify.app_products.png" width="400" height="300"
+                                alt="my Projects">
+
+                        </a>
+
+                    </div>
+                    <div class="an">
+                        <p class="proj-content" style="
+                    overflow-wrap: break-word;
+                    padding: 30px;">This is Food Token
+                            generator Web Application
+                            for
+                            restaurant Authentication and
+                            authorization is given to this site .CHARTS included. To use this site signup is
+                            mandatory.
+                            This project is a full stack project .This page is used to Create tokens in the
+                            restaurant.
+                            TOKEN + ORDER same will be created in the products page with the help of REDUX.<a
+                                style="text-align: center;text-decoration: underline;color : #01f6ca"
+                                href="https://food-token-generator.netlify.app/" target="_blank">View site</a></p>
+                        <div style="padding-left: 30px;" class="proj-content">Frontend : <b>React</b></div>
+                        <div style="padding-left: 30px;" class="proj-content">Backend : <b>NodeJs</b></div>
+                        <div style="display:flex;justify-content: space-around;padding:20px">
+                            <a style="position : static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/food-token-generator-frontend">FRONTEND
+                                git</a>
+
+                            <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/food-token-generator-backend">BACKEND git</a>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            <div style="text-align: center;">
+            <div class="whole">
+                <div class="conti project-box">
 
-                <details>
-                    <summary style="font-weight: bold;">Description</summary>
-                    <p style="width:500px;overflow-wrap: break-word;">This is a Private Chat Web
-                        Application. It is created using SOCKET.IO .Authentication and Authorization is given in
-                        this web application .So , Signup is mandatory to use this site.</p>
-                </details>
+                    <div class="wo "
+                        style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                        <h3 class="project-heading" style="padding:10px">Chargely</h3>
+                        <a style="text-align: center;">
+                            <img class="img-hov"
+                                style="margin:15px;box-shadow: 1px 1px 15px black; border-radius: 7px;object-fit: cover;"
+                                src="./chargely.png" width="400" height="300" alt="my Projects">
+
+                        </a>
+
+                    </div>
+                    <div class="an">
+                        <p class="proj-content" style="
+                    overflow-wrap: break-word;
+                    padding: 30px;">Chargely is a no-code subscription
+                            platform.Designed and implemented a "Plansets" feature for merchants to create
+                            and customize Subscription Plans.Created a "Sell on Social" feature for merchants to expand
+                            sales across
+                            social platforms.Designed transaction and subscription pages with search, data tables,
+                            and filtering options.Implemented bulk upload functionality for customer data with
+                            validation
+                            checks and automatic debit features.Integrated secure payment gateways, including Stripe and
+                            PayPal, to
+                            ensure smooth and secure transactions.</p>
+                        <div style="padding-left: 30px;" class="proj-content">Frontend : <b>Angular</b></div>
+                        <div style="padding-left: 30px;" class="proj-content">Backend : <b>NodeJs</b></div>
+                        <!-- <div style="display:flex;justify-content: space-around;padding:20px">
+                            <a style="position : static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/food-token-generator-frontend">FRONTEND
+                                git</a>
+
+                            <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/food-token-generator-backend">BACKEND git</a> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="whole">
+                <div class="conti project-box">
+
+                    <div class="wo "
+                        style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                        <h3 class="project-heading" style="padding:10px">Dailyworks</h3>
+                        <a style="text-align: center;" href="https://jujutsu-online-mobile-store-0nh8.onrender.com/"
+                            target="_blank">
+                            <img class="img-hov"
+                                style="margin:15px;object-fit: cover;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
+                                src="./dailyworks.png" height="300" width="400" alt="my Projects">
+                        </a>
+                    </div>
+                    <div class="an">
+                        <p class="proj-content" style="
+                    overflow-wrap: break-word;
+                    padding: 30px;">Solely developed the entire website, ranging from the homepage to the logout page,
+                            ensuring cohesive design
+                            and functionality.
+                            Developed a user-friendly API creation feature allowing users to generate API keys by simply
+                            clicking the
+                            "Generate" button.
+                            Integrated secure payment gateways (Stripe and PayPal) for API key generation, ensuring
+                            smooth and secure
+                            transactions.
+                            Upon successful payment completion, users receive their generated API key instantly.
+                            Implemented functionality to delete API keys and provided an easy copy-to-clipboard option
+                            for convenience</p>
+                        <div style="padding-left: 30px;" class="proj-content">Frontend : <b>Angular</b></div>
+                        <div style="padding-left: 30px;" class="proj-content">Backend : <b>NodeJs</b></div>
+                        <!-- <div style="display:flex;justify-content: space-around;padding:20px">
+                            <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
+                                target="_blank"
+                                href="https://github.com/Mohammedansari808/jujutsu-online-mobile-store-frontend">FRONTEND
+                                git</a>
+            
+                            <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/jujutsu-online-mobile-store-back">BACKEND git</a>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="whole">
+                <div class="conti project-box">
+
+                    <div class="wo "
+                        style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                        <h3 class="project-heading" style="padding:10px">Jujutsu Online Mobile Store</h3>
+                        <a style="text-align: center;" href="https://jujutsu-online-mobile-store-0nh8.onrender.com/"
+                            target="_blank">
+                            <img class="img-hov"
+                                style="margin:15px;object-fit: cover;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
+                                src="./Screenshot_2.png" height="300" width="400" alt="my Projects">
+                        </a>
+                    </div>
+                    <div class="an">
+                        <p class="proj-content" style="
+                    overflow-wrap: break-word;
+                    padding: 30px;">This is an Online Mobile
+                            Store
+                            web Application.Customers can Buy Mobiles from this Store.This Web Application has Online
+                            Payment so that Customers can pay in Online to Buy the Product. Authentication and
+                            Authorization
+                            is given in this web application .So , Signup is mandatory to use this site..</p>
+                        <div style="padding-left: 30px;" class="proj-content">Frontend : <b>React</b></div>
+                        <div style="padding-left: 30px;" class="proj-content">Backend : <b>NodeJs</b></div>
+                        <div style="display:flex;justify-content: space-around;padding:20px">
+                            <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
+                                target="_blank"
+                                href="https://github.com/Mohammedansari808/jujutsu-online-mobile-store-frontend">FRONTEND
+                                git</a>
+
+                            <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/jujutsu-online-mobile-store-back">BACKEND
+                                git</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="whole">
+                <div class="conti project-box">
+
+                    <div class="wo "
+                        style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                        <h3 class="project-heading" style="padding:10px">CHITCHAT Private</h3>
+                        <a style="text-align: center;" href="https://chit-chat-z234.netlify.app/" target="_blank">
+                            <img class="img-hov"
+                                style="margin:15px;object-fit: cover;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
+                                src="./chit-chat-z234.netlify.app_msg.png" width="400" height="300" alt="my Projects">
+                        </a>
+
+                    </div>
+                    <div class="an">
+                        <p class="proj-content" style="
+                    overflow-wrap: break-word;
+                    padding: 30px;">This is a Private Chat Web
+                            Application. It is created using SOCKET.IO .Authentication and Authorization is given in
+                            this web application .So , Signup is mandatory to use this site.</p>
+                        <div style="padding-left: 30px;" class="proj-content">Frontend : <b>React</b></div>
+                        <div style="padding-left: 30px;" class="proj-content">Backend : <b>NodeJs</b></div>
+                        <div style="display:flex;justify-content: space-around;padding:20px">
+                            <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
+                                target="_blank" href="https://github.com/Mohammedansari808/chit-chat-frontend">FRONTEND
+                                git</a>
+
+                            <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/chit-chat-backend">BACKEND git</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="whole">
+                <div class="conti project-box">
+
+                    <div class="wo "
+                        style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;">
+                        <h3 class="project-heading" style="padding:10px">Ticket booking</h3>
+                        <a style="text-align: center;" href="https://ticket-book-my-show.netlify.app/" target="_blank">
+                            <img class="img-hov"
+                                style="margin:15px;object-fit: contain;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
+                                src="./ticket-book-my-show.netlify.app_theaters.png" height="300" width="400"
+                                alt="my Projects">
+                        </a>
+
+                    </div>
+                    <div class="an">
+                        <p class="proj-content" style="
+                    overflow-wrap: break-word;
+                    padding: 30px;">This is an Ticket Booking
+                            Web
+                            Application .CRUD operation only Accessible for Admin.Other Users can book ticket for the
+                            ShowsAuthentication and authorization is given to this site .To use this site signup is
+                            mandatory. This project is a full stack project .This page is used to book tickets in the
+                            Theaters.</p>
+                        <div style="padding-left: 30px;" class="proj-content">Frontend : <b>React</b></div>
+                        <div style="padding-left: 30px;" class="proj-content">Backend : <b>NodeJs</b></div>
+                        <div style="display:flex;justify-content: space-around;padding:20px">
+                            <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
+                                target="_blank" href="https://github.com/Mohammedansari808/ticket-booking">FRONTEND
+                                git</a>
+
+                            <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
+                                href="https://github.com/Mohammedansari808/ticket-booking-backend">BACKEND git</a>
+
+
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
-        <div class="project-box"
-            style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;border-radius: 7px;">
-            <h3 style="text-align: center ;padding:10px">Jujutsu Online Mobile Store</h3>
-            <a style="text-align: center;" href="https://jujutsu-online-mobile-store-0nh8.onrender.com/"
-                target="_blank">
-                <img class="img-hov"
-                    style="margin:15px;object-fit: cover;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
-                    src="./Screenshot_2.png" height="300" width="400" alt="my Projects">
-            </a>
-            <div style="display:flex;justify-content: space-around;padding:20px">
-                <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
-                    target="_blank"
-                    href="https://github.com/Mohammedansari808/jujutsu-online-mobile-store-frontend">FRONTEND
-                    git</a>
 
-                <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
-                    href="https://github.com/Mohammedansari808/jujutsu-online-mobile-store-back">BACKEND git</a>
-            </div>
-            <div style="text-align: center;">
 
-                <details>
-
-                    <summary style="font-weight: bold;">Description</summary>
-                    <p style="width:500px;overflow-wrap: break-word;">This is an Online Mobile
-                        Store
-                        web Application.Customers can Buy Mobiles from this Store.This Web Application has Online
-                        Payment so that Customers can pay in Online to Buy the Product. Authentication and
-                        Authorization
-                        is given in this web application .So , Signup is mandatory to use this site.</p>
-                </details>
-
-            </div>
         </div>
 
 
-        <div class="project-box"
-            style="display:flex;flex-direction: column;align-content: center;margin:15px;padding:15px;border-radius: 7px;">
-            <h3 style="text-align: center ;padding:10px">Ticket booking</h3>
-            <a style="text-align: center;" href="https://ticket-book-my-show.netlify.app/" target="_blank">
-                <img class="img-hov"
-                    style="margin:15px;object-fit: contain;object-position: center ;box-shadow: 1px 1px 15px black; border-radius: 7px;"
-                    src="./ticket-book-my-show.netlify.app_theaters.png" height="300" width="400" alt="my Projects">
-            </a>
-            <div style="display:flex;justify-content: space-around;padding:20px">
-                <a style="position : static;max-width: 200px;margin-right: 25px;" class="a-link res-down"
-                    target="_blank" href="https://github.com/Mohammedansari808/ticket-booking">FRONTEND git</a>
 
-                <a style="position: static;max-width: 200px;" class="a-link res-down" target="_blank"
-                    href="https://github.com/Mohammedansari808/ticket-booking-backend">BACKEND git</a>
-            </div>
-            <div style="text-align: center;">
 
-                <details>
 
-                    <summary style="font-weight: bold;">Description</summary>
-                    <p style="width:500px;overflow-wrap: break-word;">This is an Ticket Booking
-                        Web
-                        Application .CRUD operation only Accessible for Admin.Other Users can book ticket for the
-                        ShowsAuthentication and authorization is given to this site .To use this site signup is
-                        mandatory. This project is a full stack project .This page is used to book tickets in the
-                        Theaters.</p>
-                </details>
 
-            </div>
         </div>
-
-    </div>
-
+    </section>
     </div>
 
 
@@ -369,12 +647,12 @@
                 style="display: flex;justify-content: space-around;width:150px;margin: 20px ;margin-top:15px ;position :fixed;top:0; ">
                 <div>
                     <a title="github profile" href="https://github.com/Mohammedansari808" target="_blank"><i
-                            class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                            class="fa fa-github fa-2x" style="color :#fff" aria-hidden="true"></i></a>
 
                 </div>
                 <div style="margin-right: 35px;">
                     <a title="Linkedin profile" href="https://www.linkedin.com/in/mohammed-ansari-764b3225a/"
-                        target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                        target="_blank"><i  style="color :#fff" class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
                 </div>
 
 
@@ -397,7 +675,94 @@
             </div>
         </div>
     </div>
+    <script>
+        var i = 0;
+        var txt = 'A FULL STACK DEVELOPER'; /* The text */
+        var speed = 50; /* The speed/duration of the effect in milliseconds */
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
 
+        }
+
+        setTimeout(() => {
+            typeWriter()
+        }, 2000);
+
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY;
+            let doc = document.querySelector('.navibar')
+            if (scrollPosition > this.previousScrollPosition) {
+                doc.style.top = '-100px'
+            } else {
+                doc.style.top = '0px'
+            }
+
+            this.previousScrollPosition = scrollPosition;
+        });
+        // window.addEventListener('mousemove', function (e) {
+        //     // Create a new div element for the cursor trail
+        //     const trailElement = document.createElement('div');
+            
+        //     trailElement.classList.add('cursor-trail');
+
+        //     // Calculate the position of the trail element
+        //     const trailX = e.clientX;
+        //     const trailY = e.clientY;
+
+        //     // Set the position of the trail element
+        //     trailElement.style.left = trailX + 'px';
+        //     trailElement.style.top = trailY + 'px';
+
+        //     // Apply the gradient background
+        //     trailElement.style.background = 'blue';
+
+        //     // Append the trail element to the cursor trail container
+        //     document.getElementById('cursor-trail').appendChild(trailElement);
+        //     setTimeout(() => {
+        //       let val =  document.getElementById('cursor-trail')
+        //       val?.remove()
+        //       console.log('removed')
+        //       let cre = document.createElement()
+        //     }, 3000);
+        // });
+let mouseStop ;
+let count =0
+let bubb =0
+        window.addEventListener('mousemove', function (e) {
+            let cursorElement = document.querySelector('.cursor')
+            count = count+0.01
+            bubb = bubb+ 0.1
+            cursorElement.style.display= 'block'
+            console.log(+cursorElement.style.width.split('p')[0] + count)
+            cursorElement.style.width =     `${+cursorElement.style.width.split('p')[0] + count}px`
+            cursorElement.style.height = `${+cursorElement.style.height.split('p')[0] + count}px`
+// cursorElement.style.transform = `rotate(${bubb}deg)`
+                cursorElement.style.left = `${e.clientX}px`
+            cursorElement.style.top = e.clientY + 'px'
+            
+          
+clearTimeout(mouseStop)
+mouseStop = setTimeout(() => {
+    count = 0
+    console.log('completed')
+    let cursorElement = document.querySelector('.cursor')
+    cursorElement.style.top = (+cursorElement.style.top.split('p')[0]) + 'px'
+            
+            setTimeout(() => {
+                cursorElement.style.width = '10px'
+            cursorElement.style.height = '10px'
+                cursorElement.style.display = 'none'
+            }, 200);
+            
+count++
+          
+}, 1000);
+        })
+    </script>
 
 </body>
 
